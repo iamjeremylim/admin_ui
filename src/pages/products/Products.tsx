@@ -55,6 +55,7 @@ const columns: GridColDef[] = [
 
 const Products = () => {
   const [open, setOpen] = useState(false);
+
   return (
     <div className="products">
       <div className="info">

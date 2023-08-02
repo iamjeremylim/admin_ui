@@ -1,12 +1,14 @@
-import Home from "./pages/home/Home";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Users from "./pages/users/Users";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./lib/react-query";
+import Stores from "./pages/stores/Stores";
 import Products from "./pages/products/Products";
 import NavBar from "./components/navbar/NavBar";
 import Footer from "./components/footer/Footer";
 import Menu from "./components/menu/Menu";
 import Product from "./pages/product/Product";
 import User from "./pages/user/User";
+import Home from "./pages/home/Home";
 import "./styles/global.scss";
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
             <Menu />
           </div>
           <div className="contentContainer">
-            <Outlet />
+            <QueryClientProvider client={queryClient}>
+              <Outlet />
+            </QueryClientProvider>
           </div>
         </div>
         <Footer />
@@ -37,8 +41,8 @@ function App() {
           element: <Home />,
         },
         {
-          path: "/users",
-          element: <Users />,
+          path: "/stores",
+          element: <Stores />,
         },
         {
           path: "/products",

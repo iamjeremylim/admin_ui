@@ -1,6 +1,6 @@
 import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
+import { DeleteStore } from "@/pages/stores/components/DeleteStore";
 import "./dataTable.scss";
-import { Link } from "react-router-dom";
 
 type Props = {
   columns: GridColDef[];
@@ -9,26 +9,16 @@ type Props = {
 };
 
 const DataTable = (props: Props) => {
-  const handleDelete = (id: number) => {
-    // delete the item
-    console.log(id + " deleted");
-  };
 
   const actionColumn: GridColDef = {
     field: "actions",
     headerName: "Actions",
     width: 200,
     renderCell: (params) => (
-      <div className="action">
-        <Link to={`/${props.slug}/${params.row.id}`}>
-          <img src="/view.svg" alt="" />
-        </Link>
-        <div className="delete" onClick={() => handleDelete(params.row.id)}>
-          <img src="/delete.svg" alt="" />
-        </div>
-      </div>
+      <DeleteStore storeId={params.row.id} slug={props.slug}/>
     ),
   };
+
   return (
     <div className="dataTable">
       <DataGrid
