@@ -1,12 +1,12 @@
-import { GridColDef } from "@mui/x-data-grid";
-import DataTable from "../../components/dataTable/DataTable";
-import "./stores.scss";
-import Add from "../../components/add/Add";
-import { useState } from "react";
-import { useStores } from "./api/getStores";
+import { useState } from 'react';
+import { Add } from '@/components/add';
+import { useStores } from '../api/getStores';
+import { GridColDef } from '@mui/x-data-grid';
+import { DataTable } from '@/components/dataTable';
+import '../style/stores.scss';
 
 const columns: GridColDef[] = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: 'id', headerName: 'ID', width: 90 },
   // {
   //   field: "img",
   //   headerName: "Avatar",
@@ -16,9 +16,9 @@ const columns: GridColDef[] = [
   //   },
   // },
   {
-    field: "name",
-    type: "string",
-    headerName: "Store name",
+    field: 'name',
+    type: 'string',
+    headerName: 'Store name',
     width: 150,
   },
   // {
@@ -41,9 +41,9 @@ const columns: GridColDef[] = [
   // },
 ];
 
-const Stores = () => {
+export const Stores = () => {
   const [open, setOpen] = useState(false);
-  const storesQuery = useStores({ username: "jeremy" });
+  const storesQuery = useStores({ username: 'jeremy' });
 
   return (
     <div className="stores">
@@ -61,5 +61,3 @@ const Stores = () => {
     </div>
   );
 };
-
-export default Stores;

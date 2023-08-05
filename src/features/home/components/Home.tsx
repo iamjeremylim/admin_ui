@@ -1,6 +1,3 @@
-import TopBox from "../../components/topBox/TopBox";
-import ChartBox from "../../components/chartBox/ChartBox";
-import "./home.scss";
 import {
   barChartBoxRevenue,
   barChartBoxVisit,
@@ -8,12 +5,15 @@ import {
   chartBoxProduct,
   chartBoxRevenue,
   chartBoxUser,
-} from "../../data";
-import BarChartBox from "../../components/barChartBox/BarChartBox";
-import PieChartBox from "../../components/pieChartBox/PieChartBox";
-import BigChartBox from "../../components/bigChartBox/BigChartBox";
+} from '../../../data';
+import { PieChartBox } from '@/components/pieChartBox';
+import { BarChartBox } from '@/components/barChartBox';
+import { BigChartBox } from '@/components/bigChartBox';
+import { ChartBox } from '@/components/chartBox';
+import { TopBox } from '@/components/topBox';
+import '../style/home.scss';
 
-const Home = () => {
+export const Home = () => {
   return (
     <div className="home">
       <div className="box box1">
@@ -46,5 +46,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

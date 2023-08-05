@@ -1,13 +1,5 @@
-import {
-  Legend,
-  Line,
-  LineChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
-import "./single.scss";
+import { Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import './profile.scss';
 
 type Props = {
   id: number;
@@ -24,9 +16,9 @@ type Props = {
   }[];
 };
 
-const Single = (props: Props) => {
+export const Profile = (props: Props) => {
   return (
-    <div className="single">
+    <div className="profile">
       <div className="view">
         <div className="info">
           <div className="topInfo">
@@ -63,11 +55,7 @@ const Single = (props: Props) => {
                 <Tooltip />
                 <Legend />
                 {props.chart.dataKeys.map((dataKey) => (
-                  <Line
-                    type="monotone"
-                    dataKey={dataKey.name}
-                    stroke={dataKey.color}
-                  />
+                  <Line type="monotone" dataKey={dataKey.name} stroke={dataKey.color} />
                 ))}
               </LineChart>
             </ResponsiveContainer>
@@ -92,5 +80,3 @@ const Single = (props: Props) => {
     </div>
   );
 };
-
-export default Single;

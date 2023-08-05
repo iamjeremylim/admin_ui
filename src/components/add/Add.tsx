@@ -1,6 +1,6 @@
-import { GridColDef } from "@mui/x-data-grid";
-import "./add.scss";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { GridColDef } from '@mui/x-data-grid';
+import './add.scss';
 
 type Props = {
   slug: string;
@@ -8,18 +8,18 @@ type Props = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Add = (props: Props) => {
+export const Add = (props: Props) => {
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: () => {
       return fetch(`http://localhost:8080/stores`, {
-        method: "post",
+        method: 'post',
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name: "Apple", owner: "jeremy" }),
+        body: JSON.stringify({ name: 'Apple', owner: 'jeremy' }),
       });
     },
     onSuccess: () => {
@@ -43,7 +43,7 @@ const Add = (props: Props) => {
         <h1>Add new {props.slug}</h1>
         <form onSubmit={handleSubmit}>
           {props.columns
-            .filter((item) => item.field !== "id" && item.field !== "img")
+            .filter((item) => item.field !== 'id' && item.field !== 'img')
             .map((column) => (
               <div className="item" key={column.field}>
                 <label>{column.headerName}</label>
@@ -56,5 +56,3 @@ const Add = (props: Props) => {
     </div>
   );
 };
-
-export default Add;

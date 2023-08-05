@@ -1,6 +1,6 @@
-import { DataGrid, GridColDef, GridToolbar } from "@mui/x-data-grid";
-import { DeleteStore } from "@/pages/stores/components/DeleteStore";
-import "./dataTable.scss";
+import { DataGrid, GridColDef, GridToolbar } from '@mui/x-data-grid';
+import { DeleteStore } from '@/features/stores/components/DeleteStore';
+import './dataTable.scss';
 
 type Props = {
   columns: GridColDef[];
@@ -8,15 +8,12 @@ type Props = {
   slug: string;
 };
 
-const DataTable = (props: Props) => {
-
+export const DataTable = (props: Props) => {
   const actionColumn: GridColDef = {
-    field: "actions",
-    headerName: "Actions",
+    field: 'actions',
+    headerName: 'Actions',
     width: 200,
-    renderCell: (params) => (
-      <DeleteStore storeId={params.row.id} slug={props.slug}/>
-    ),
+    renderCell: (params) => <DeleteStore storeId={params.row.id} slug={props.slug} />,
   };
 
   return (
@@ -49,5 +46,3 @@ const DataTable = (props: Props) => {
     </div>
   );
 };
-
-export default DataTable;

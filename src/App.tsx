@@ -1,15 +1,15 @@
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./lib/react-query";
-import Stores from "./pages/stores/Stores";
-import Products from "./pages/products/Products";
-import NavBar from "./components/navbar/NavBar";
-import Footer from "./components/footer/Footer";
-import Menu from "./components/menu/Menu";
-import Product from "./pages/product/Product";
-import User from "./pages/user/User";
-import Home from "./pages/home/Home";
-import "./styles/global.scss";
+import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './lib/react-query';
+import { Stores } from '@/features/stores';
+import { Products } from '@/features/products';
+import { User } from '@/features/user';
+import { Home } from '@/features/home';
+import { Product } from '@/features/product';
+import { Footer } from '@/components/footer';
+import { Menu } from '@/components/menu';
+import { NavBar } from '@/components/navbar';
+import './styles/global.scss';
 
 function App() {
   const Layout = () => {
@@ -33,27 +33,27 @@ function App() {
 
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: '/',
       element: <Layout />,
       children: [
         {
-          path: "/",
+          path: '/',
           element: <Home />,
         },
         {
-          path: "/stores",
+          path: '/stores',
           element: <Stores />,
         },
         {
-          path: "/products",
+          path: '/products',
           element: <Products />,
         },
         {
-          path: "/products/:id",
+          path: '/products/:id',
           element: <Product />,
         },
         {
-          path: "/users/:id",
+          path: '/users/:id',
           element: <User />,
         },
       ],

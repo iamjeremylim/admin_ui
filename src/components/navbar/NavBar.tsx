@@ -1,6 +1,6 @@
-import "./navbar.scss";
+import './navbar.scss';
 
-function NavBar() {
+export const NavBar = () => {
   return (
     <div className="navbar">
       <div className="logo">
@@ -23,6 +23,4 @@ function NavBar() {
       </div>
     </div>
   );
-}
-
-export default NavBar;
+};

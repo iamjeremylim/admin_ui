@@ -1,6 +1,6 @@
-@import "../../styles//responsive.scss";
+@import '../../styles//responsive.scss';
 
-.single {
+.profile {
   display: flex;
 
   @include xl {
@@ -82,7 +82,7 @@
         background-color: #f45b69;
 
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           bottom: 0;
           left: 50%;
