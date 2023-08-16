@@ -27,8 +27,8 @@ export const Profile = (props: Props) => {
             <button>Update</button>
           </div>
           <div className="details">
-            {Object.entries(props.info).map((item) => (
-              <div className="item" key={item[0]}>
+            {Object.entries(props.info).map((item, index) => (
+              <div className="item" key={index}>
                 <span className="itemTitle">{item[0]}</span>
                 <span className="itemValue">{item[1]}</span>
               </div>
@@ -54,8 +54,8 @@ export const Profile = (props: Props) => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                {props.chart.dataKeys.map((dataKey) => (
-                  <Line type="monotone" dataKey={dataKey.name} stroke={dataKey.color} />
+                {props.chart.dataKeys.map((dataKey, index) => (
+                  <Line key={index} type="monotone" dataKey={dataKey.name} stroke={dataKey.color} />
                 ))}
               </LineChart>
             </ResponsiveContainer>
@@ -66,8 +66,8 @@ export const Profile = (props: Props) => {
         <h2>Latest Activities</h2>
         {props.activities && (
           <ul>
-            {props.activities.map((activity) => (
-              <li key={activity.text}>
+            {props.activities.map((activity, index) => (
+              <li key={index}>
                 <div>
                   <p>{activity.text}</p>
                   <time>{activity.time}</time>

@@ -21,8 +21,8 @@ type UseStoresOptions = {
 
 export const useStores = ({ username, config }: UseStoresOptions) => {
   return useQuery<ExtractFnReturnType<QueryFnType>>({
-    queryKey: ["allstores"],
+    queryKey: ['allstores'],
     queryFn: () => getStores({ username }),
     ...config,
-  })
+  });
 };

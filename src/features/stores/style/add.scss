@@ -1,4 +1,4 @@
-@import "../../styles/variables.scss";
+@import '../../../styles/variables.scss';
 
 .add {
   width: 100vw;
@@ -28,6 +28,7 @@
       top: 10px;
       right: 10px;
       cursor: pointer;
+      height: 25px;
     }
 
     form {
@@ -41,7 +42,7 @@
         flex-direction: column;
         gap: 10px;
         margin-bottom: 20px;
-        width: 48%;
+        width: 100%;
 
         label {
           font-size: 14px;
@@ -54,6 +55,13 @@
           color: white;
           border: 1px solid $soft-color;
           border-radius: 3px;
+          width: 100%;
+        }
+
+        .fieldError {
+          color: indianred;
+          font-size: 14px;
+          margin-top: 5px;
         }
       }
 

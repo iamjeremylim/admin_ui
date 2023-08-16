@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import { useDeleteStore } from "../api/deleteStore";
+import { Link } from 'react-router-dom';
+import { useDeleteStore } from '../api/deleteStore';
 
 type DeleteStoreProps = {
   storeId: number;
@@ -16,7 +16,7 @@ export const DeleteStore = ({ storeId, slug }: DeleteStoreProps) => {
       </Link>
       <div
         className="delete"
-        onClick={() => deleteStoreMutation.mutate({ storeId })}
+        onClick={async () => await deleteStoreMutation.mutateAsync({ storeId })}
       >
         <img src="/delete.svg" alt="" />
       </div>
