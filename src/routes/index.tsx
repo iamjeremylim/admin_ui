@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet, useRoutes } from 'react-router-dom';
+import { Outlet, useRoutes } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from '../lib/react-query';
 import { Stores } from '@/features/stores';
@@ -9,11 +9,12 @@ import { Menu } from '@/components/menu';
 import { NavBar } from '@/components/navbar';
 import '../styles/global.scss';
 import { ErrorBoundary } from 'react-error-boundary';
+import { SnackbarProvider } from 'notistack';
 
 const ErrorFallback = () => {
   return (
-    <div role="alert">
-      <h2 className="text-lg font-semibold">Ooops, something went wrong :( </h2>
+    <div className="errorContainer">
+      Oops! We are experiencing a little problem. Please allow us some time to fix it, thank you.
     </div>
   );
 };
@@ -29,7 +30,9 @@ const Layout = () => {
         <div className="contentContainer">
           <ErrorBoundary FallbackComponent={ErrorFallback}>
             <QueryClientProvider client={queryClient}>
-              <Outlet />
+              <SnackbarProvider maxSnack={3}>
+                <Outlet />
+              </SnackbarProvider>
             </QueryClientProvider>
           </ErrorBoundary>
         </div>

@@ -28,7 +28,7 @@ export const AddStore = (props: Props) => {
             await addStoreMutation.mutateAsync({
               data: {
                 name: values.name,
-                owner: 'jeremys',
+                owner: 'jeremy',
               },
             });
           }}

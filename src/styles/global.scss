@@ -1,5 +1,5 @@
-@import "./variables.scss";
-@import "./responsive.scss";
+@import './variables.scss';
+@import './responsive.scss';
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ a {
 }
 
 .main {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: $main-bg;
   color: $main-color;
   min-height: 100vh;
@@ -36,4 +36,11 @@ a {
 .contentContainer {
   width: 100%;
   padding: 5px 20px;
+
+  .errorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 }

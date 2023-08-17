@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useDeleteStore } from '../api/deleteStore';
 
 type DeleteStoreProps = {
@@ -6,14 +5,15 @@ type DeleteStoreProps = {
   slug: string;
 };
 
-export const DeleteStore = ({ storeId, slug }: DeleteStoreProps) => {
+export const DeleteStore = ({ storeId }: DeleteStoreProps) => {
   const deleteStoreMutation = useDeleteStore();
 
   return (
     <div className="action">
+      {/* TODO: Implement view store page
       <Link to={`/${slug}/${storeId}`}>
         <img src="/view.svg" alt="" />
-      </Link>
+      </Link> */}
       <div
         className="delete"
         onClick={async () => await deleteStoreMutation.mutateAsync({ storeId })}

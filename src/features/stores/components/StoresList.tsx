@@ -4,6 +4,14 @@ import { DataTable } from '@/components/dataTable';
 
 const columns: GridColDef[] = [
   { field: 'id', headerName: 'ID', width: 90 },
+  {
+    field: 'name',
+    type: 'string',
+    headerName: 'Store name',
+    width: 150,
+    flex: 2,
+  },
+  // TODO: Add more store details to columns
   // {
   //   field: "img",
   //   headerName: "Avatar",
@@ -12,12 +20,6 @@ const columns: GridColDef[] = [
   //     return <img src={params.row.img || "/noavatar.png"} alt="" />;
   //   },
   // },
-  {
-    field: 'name',
-    type: 'string',
-    headerName: 'Store name',
-    width: 150,
-  },
   // {
   //   field: "email",
   //   type: "string",
