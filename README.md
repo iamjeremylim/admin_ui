@@ -2,12 +2,17 @@
 
 The application is a platform for store merchants to manage their stores.
 
-## Current app features
+## App features
 
-User can perform following actions:
+Current:
 
-- view list of stores
-- create/delete a store
+- User can view list of stores
+- User can create/delete a store
+
+Future:
+
+- User authentication
+- User can view/edit a store
 
 ## Getting started
 
@@ -19,7 +24,7 @@ Prerequisites:
 
 To start the app locally, execute the following steps:
 
-1. Start the backend api service
+1. Set up the backend api service
 
 ```bash
 git clone https://github.com/iamjeremylim/myadmin-service
@@ -27,7 +32,7 @@ cd myadmin-service
 docker-compose up
 ```
 
-2. Start the frontend app
+2. Set up the frontend app
 
 ```bash
 git clone https://github.com/iamjeremylim/admin_ui
@@ -36,12 +41,11 @@ cp .env.example .env
 yarn install
 ```
 
-##### `yarn dev`
+3. Start the app
 
-Runs the app in the development mode.\
+```bash
+yarn dev
+```
+
+The app will now run in the development mode.\
 Open [http://127.0.0.1:5173](http://127.0.0.1:5173) to view it in the browser.
-
-## Future app features
-
-- User authentication
-- User can view/edit a store
